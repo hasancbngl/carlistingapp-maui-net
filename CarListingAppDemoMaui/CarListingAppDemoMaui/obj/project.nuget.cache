@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QiEa3HvaCuYQtjwBD21r79V6BMtDkumwjOyGbYLD24M1BtfWVzzCe0oEBMU3odz5bTsBAmGJSvrnRHrM6eT4hw==",
+  "dgSpecHash": "NTvvAZeoTFw33a/B5VahjfIwP6dgSyDRSsjmTkJH7j6pGl57fk7bChiMO4APuQGof1pnS9BC2zFHuvdKM7Keyg==",
   "success": true,
   "projectFilePath": "/Users/hasancobanoglu/Desktop/demo-apps/maui .net/CarListingAppDemoMaui/CarListingAppDemoMaui/CarListingAppDemoMaui.csproj",
   "expectedPackageFiles": [
+    "/Users/hasancobanoglu/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
     "/Users/hasancobanoglu/.nuget/packages/googlegson/2.9.1.1/googlegson.2.9.1.1.nupkg.sha512",
     "/Users/hasancobanoglu/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "/Users/hasancobanoglu/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
