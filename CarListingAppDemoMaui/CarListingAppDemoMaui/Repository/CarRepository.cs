@@ -1,7 +1,7 @@
 ﻿using System;
 using CarListingAppDemoMaui.Model;
 
-namespace CarListingAppDemoMaui.Service
+namespace CarListingAppDemoMaui.Repository
 {
     public class CarRepository
     {

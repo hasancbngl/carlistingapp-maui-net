@@ -1,39 +1,17 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace CarListingAppDemoMaui.ViewModel
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public partial class BaseViewModel : ObservableObject
     {
-        string _title;
-        bool _isBusy;
-        public bool IsBusy
-        {
-            get => _isBusy;
-            set
-            {
-                if (_isBusy == value) return;
-                _isBusy = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Title
-        {
-            get => _title; 
-            set
-            {
-                if (_title == value) return;
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
+        //observable object is replacement of INotifyProperty changes using CommunityToolkit.Mvvm dependency
+        //observableproperty will generate required getter setter and public accessable value.
+        [ObservableProperty]
+        string title;
+        [ObservableProperty]
+        bool isLoading;
 
-        public void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+        public bool IsNotLoading => !IsLoading;
     }
 }
 
