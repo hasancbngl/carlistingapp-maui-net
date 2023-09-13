@@ -44,6 +44,27 @@ namespace CarListingAppDemoMaui.Repository
                     Model = "Spider",
                     Vin ="123s",
                 },
+                   new Car
+                {
+                    Id = 3,
+                    Make = "Honda",
+                    Model = "Civic",
+                    Vin ="123",
+                },
+                 new Car
+                {
+                    Id = 4,
+                    Make = "BMW",
+                    Model = "M3",
+                    Vin ="123e",
+                },
+                  new Car
+                {
+                    Id = 5,
+                    Make = "Ferrari",
+                    Model = "Spider",
+                    Vin ="123s",
+                },
             };
         }
     }

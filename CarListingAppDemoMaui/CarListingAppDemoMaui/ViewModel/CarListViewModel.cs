@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using CarListingAppDemoMaui.Model;
 using CarListingAppDemoMaui.Repository;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace CarListingAppDemoMaui.ViewModel
@@ -10,10 +11,12 @@ namespace CarListingAppDemoMaui.ViewModel
     {
         private readonly CarRepository repository;
         public ObservableCollection<Car> Cars { get; private set; } = new();
+        [ObservableProperty]
+        bool isRefreshing;
 
         public CarListViewModel(CarRepository repository)
         {
-            Title = "Car List";
+            Title = "Car List Screen";
             this.repository = repository;
         }
 
@@ -37,6 +40,7 @@ namespace CarListingAppDemoMaui.ViewModel
             finally
             {
                 IsLoading = false;
+                IsRefreshing = false;
             }
         }
     }

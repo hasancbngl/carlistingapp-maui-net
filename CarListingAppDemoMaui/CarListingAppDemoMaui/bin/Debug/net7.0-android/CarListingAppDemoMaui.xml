@@ -15,6 +15,10 @@
         </member>
         <member name="T:CarListingAppDemoMaui.ViewModel.CarListViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.IsRefreshing">
+            <inheritdoc cref="F:CarListingAppDemoMaui.ViewModel.CarListViewModel.isRefreshing"/>
         </member>
         <member name="F:CarListingAppDemoMaui.ViewModel.CarListViewModel.getCarListCommand">
             <summary>The backing field for <see cref="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarListCommand"/>.</summary>
@@ -34,6 +38,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -45,6 +52,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
         </member>
     </members>
 </doc>
