@@ -1,35 +1,21 @@
 ﻿<Properties StartupConfiguration="{449837C3-9D1B-47DE-B430-72C87AF349C8}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/MainPage.xaml.cs">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D22E7E3F-D39C-40C2-9B55-E384EA6716D3" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs">
     <Files>
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="39" Column="35" />
-      <File FileName="CarListingAppDemoMaui/MainPage.xaml" Line="5" Column="1" />
-      <File FileName="CarListingAppDemoMaui/MainPage.xaml.cs" Line="10" Column="23" />
-      <File FileName="CarListingAppDemoMaui/MauiProgram.cs" Line="25" Column="47" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="37" Column="69" />
+      <File FileName="CarListingAppDemoMaui/MainPage.xaml" Line="12" Column="155" />
+      <File FileName="CarListingAppDemoMaui/MauiProgram.cs" />
+      <File FileName="CarListingAppDemoMaui/MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="CarListingAppDemoMaui/Repository/CarRepository.cs" />
+      <File FileName="CarListingAppDemoMaui/Model/Car.cs" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="CarListingAppDemoMaui">
-            <Node name="CarListingAppDemoMaui">
-              <Node name="Model" expanded="True" />
-              <Node name="Repository" expanded="True" />
-              <Node name="ViewModel" expanded="True" />
-              <Node name="MainPage.xaml" expanded="True">
-                <Node name="MainPage.xaml.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D22E7E3F-D39C-40C2-9B55-E384EA6716D3" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="Android.2A251FDH300D50" />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.2A251FDH300D50" />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

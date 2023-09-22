@@ -1,4 +1,5 @@
 ﻿using CarListingAppDemoMaui.Repository;
+using CarListingAppDemoMaui.View;
 using CarListingAppDemoMaui.ViewModel;
 using Microsoft.Extensions.Logging;
 
@@ -22,7 +23,10 @@ public static class MauiProgram
 #endif
         builder.Services.AddSingleton<CarRepository>();
         builder.Services.AddSingleton<CarListViewModel>();
+        //new instance every time
+        builder.Services.AddTransient<CarDetailsViewModel>();
         builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddTransient<CarDetailsPage>();
         return builder.Build();
     }
 }

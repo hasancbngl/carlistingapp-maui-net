@@ -13,7 +13,14 @@
         <member name="P:CarListingAppDemoMaui.ViewModel.BaseViewModel.IsLoading">
             <inheritdoc cref="F:CarListingAppDemoMaui.ViewModel.BaseViewModel.isLoading"/>
         </member>
+        <member name="T:CarListingAppDemoMaui.ViewModel.CarDetailsViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:CarListingAppDemoMaui.ViewModel.CarDetailsViewModel.Car">
+            <inheritdoc cref="F:CarListingAppDemoMaui.ViewModel.CarDetailsViewModel.car"/>
+        </member>
         <member name="T:CarListingAppDemoMaui.ViewModel.CarListViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
         </member>
@@ -24,7 +31,13 @@
             <summary>The backing field for <see cref="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarListCommand"/>.</summary>
         </member>
         <member name="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarListCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarListAsync"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarList"/>.</summary>
+        </member>
+        <member name="F:CarListingAppDemoMaui.ViewModel.CarListViewModel.getCarDetailsCommand">
+            <summary>The backing field for <see cref="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CarListingAppDemoMaui.ViewModel.CarListViewModel.GetCarDetails(CarListingAppDemoMaui.Model.Car)"/>.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
             <summary>
@@ -37,6 +50,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Car">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Car" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
@@ -52,6 +68,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Car">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Car" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using CarListingAppDemoMaui.Model;
 using CarListingAppDemoMaui.Repository;
+using CarListingAppDemoMaui.View;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -21,7 +22,7 @@ namespace CarListingAppDemoMaui.ViewModel
         }
 
         [RelayCommand]
-        async Task GetCarListAsync()
+        async Task GetCarList()
         {
             if (IsLoading) return;
             try
@@ -42,6 +43,17 @@ namespace CarListingAppDemoMaui.ViewModel
                 IsLoading = false;
                 IsRefreshing = false;
             }
+        }
+
+        [RelayCommand]
+        async Task GetCarDetails(Car car)
+        {
+            if (car == null) return;
+            System.Console.WriteLine("hasaaan" + car.Model);
+            await Shell.Current.GoToAsync(nameof(CarDetailsPage), true, new Dictionary<string, object>
+            {
+                { nameof(Car), car }
+            });
         }
     }
 }

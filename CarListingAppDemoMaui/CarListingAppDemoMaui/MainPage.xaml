@@ -9,24 +9,27 @@
     <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*, auto">
         <RefreshView Grid.ColumnSpan="2" Command="{Binding GetCarListCommand}"
                      IsRefreshing="{Binding IsRefreshing}">
-        <CollectionView Grid.ColumnSpan="2" ItemsSource="{Binding Cars}" SelectionMode="None" HorizontalOptions="Center">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Car">
-                    <Grid Padding="16">
-                        <Frame HeightRequest="90">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="" CommandParameter=""/>
-                            </Frame.GestureRecognizers>
-                            <HorizontalStackLayout Padding="10" Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
-                                <Label Text="{Binding Make}" FontSize="16"/>
-                                <Label Text="{Binding Model}" FontSize="16"/>
-                            </HorizontalStackLayout>
-                        </Frame>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-            </RefreshView>
+            <CollectionView Grid.ColumnSpan="2" ItemsSource="{Binding Cars}" SelectionMode="None" HorizontalOptions="{OnPlatform Android=Center, iOS=Start}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Car">
+                        <Grid Padding="16">
+                            <Frame HeightRequest="90">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:CarListViewModel}}, Path=GetCarDetailsCommand }"
+                                                      CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                                <HorizontalStackLayout Padding="10" Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Label Text="{Binding Make}" FontSize="16"/>
+                                    <Label Text="{Binding Model}" FontSize="16"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        <Button Text="Fetch Cars" Command="{Binding GetCarListCommand}" IsEnabled="{Binding IsNotLoading}" 
+                Grid.Row="1" Grid.Column="0" Margin="9"/>
     </Grid>
 </ContentPage>
 
