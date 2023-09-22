@@ -1,12 +1,15 @@
-﻿namespace CarListingAppDemoMaui;
+﻿using CarListingAppDemoMaui.Repository;
+
+namespace CarListingAppDemoMaui;
 
 public partial class App : Application
 {
-    public App()
+    public static CarRepository CarRepository { get; private set; }
+    public App(CarRepository carRepository)
     {
         InitializeComponent();
-
         MainPage = new AppShell();
+        CarRepository = carRepository;
     }
 }
 

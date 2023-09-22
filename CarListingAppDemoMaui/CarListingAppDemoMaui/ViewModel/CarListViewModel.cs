@@ -10,15 +10,13 @@ namespace CarListingAppDemoMaui.ViewModel
 {
     public partial class CarListViewModel : BaseViewModel
     {
-        private readonly CarRepository repository;
         public ObservableCollection<Car> Cars { get; private set; } = new();
         [ObservableProperty]
         bool isRefreshing;
 
-        public CarListViewModel(CarRepository repository)
+        public CarListViewModel()
         {
             Title = "Car List Screen";
-            this.repository = repository;
         }
 
         [RelayCommand]
@@ -29,7 +27,7 @@ namespace CarListingAppDemoMaui.ViewModel
             {
                 IsLoading = true;
                 if (Cars.Any()) Cars.Clear();
-                var cars = repository.GetCars();
+                var cars = App.CarRepository.GetCars();
                 foreach (var car in cars) Cars.Add(car);
 
             }

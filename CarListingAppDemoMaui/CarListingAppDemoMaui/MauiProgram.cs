@@ -17,11 +17,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
-        builder.Services.AddSingleton<CarRepository>();
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "carsDb.db3");
+        builder.Services.AddSingleton(repo => ActivatorUtilities.CreateInstance<CarRepository>(repo, dbPath));
         builder.Services.AddSingleton<CarListViewModel>();
         //new instance every time
         builder.Services.AddTransient<CarDetailsViewModel>();

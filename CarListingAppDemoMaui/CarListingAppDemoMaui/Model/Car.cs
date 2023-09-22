@@ -1,6 +1,9 @@
 ﻿using System;
+using SQLite;
+
 namespace CarListingAppDemoMaui.Model
 {
+    [Table("carsDb")]
     public class Car : BaseEntity
     {
         public string Make { get; set; }

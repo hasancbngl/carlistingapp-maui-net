@@ -1,71 +1,39 @@
 ﻿using System;
 using CarListingAppDemoMaui.Model;
+using SQLite;
 
 namespace CarListingAppDemoMaui.Repository
 {
     public class CarRepository
     {
+        SQLiteConnection connection;
+        string _dbPath;
+        public string StatusMessage;
+
+        public CarRepository(string dbPath)
+        {
+            _dbPath = dbPath;
+        }
+
+        private void Init()
+        {
+            if (connection != null) return;
+            connection = new SQLiteConnection(_dbPath);
+            connection.CreateTable<Car>();
+        }
+
         public List<Car> GetCars()
         {
-            return new List<Car>()
+            try
             {
-                new Car
-                {
-                    Id = 1,
-                    Make = "Honda",
-                    Model = "Fit",
-                    Vin ="123",
-                },
-                new Car
-                {
-                    Id = 2,
-                    Make = "Toyota",
-                    Model = "Prado",
-                    Vin ="1234",
-                },
-                new Car
-                {
-                    Id = 3,
-                    Make = "Honda",
-                    Model = "Civic",
-                    Vin ="123",
-                },
-                 new Car
-                {
-                    Id = 4,
-                    Make = "BMW",
-                    Model = "M3",
-                    Vin ="123e",
-                },
-                  new Car
-                {
-                    Id = 5,
-                    Make = "Ferrari",
-                    Model = "Spider",
-                    Vin ="123s",
-                },
-                   new Car
-                {
-                    Id = 3,
-                    Make = "Honda",
-                    Model = "Civic",
-                    Vin ="123",
-                },
-                 new Car
-                {
-                    Id = 4,
-                    Make = "BMW",
-                    Model = "M3",
-                    Vin ="123e",
-                },
-                  new Car
-                {
-                    Id = 5,
-                    Make = "Ferrari",
-                    Model = "Spider",
-                    Vin ="123s",
-                },
-            };
+                Init();
+                return connection.Table<Car>().ToList();
+            }
+            catch (Exception)
+            {
+                StatusMessage = "Failed to retrieve data.";
+            }
+            return new List<Car>();
         }
     }
 }
