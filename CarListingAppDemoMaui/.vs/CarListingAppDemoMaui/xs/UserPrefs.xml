@@ -1,21 +1,22 @@
 ﻿<Properties StartupConfiguration="{449837C3-9D1B-47DE-B430-72C87AF349C8}|Default">
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D22E7E3F-D39C-40C2-9B55-E384EA6716D3" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Repository/CarRepository.cs">
     <Files>
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="37" Column="69" />
-      <File FileName="CarListingAppDemoMaui/MainPage.xaml" Line="12" Column="155" />
+      <File FileName="CarListingAppDemoMaui/Model/Car.cs" Line="6" Column="19" IsPinned="True" />
+      <File FileName="CarListingAppDemoMaui/Repository/CarRepository.cs" Line="11" Column="16" />
       <File FileName="CarListingAppDemoMaui/MauiProgram.cs" />
-      <File FileName="CarListingAppDemoMaui/MainPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="CarListingAppDemoMaui/Repository/CarRepository.cs" />
-      <File FileName="CarListingAppDemoMaui/Model/Car.cs" />
+      <File FileName="CarListingAppDemoMaui/App.xaml" />
+      <File FileName="CarListingAppDemoMaui/App.xaml.cs" />
+      <File FileName="CarListingAppDemoMaui/AppShell.xaml.cs" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D22E7E3F-D39C-40C2-9B55-E384EA6716D3" />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
 </Properties>
