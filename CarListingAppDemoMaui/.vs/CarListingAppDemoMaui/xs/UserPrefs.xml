@@ -8,21 +8,21 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Service/CarApiService.cs">
     <Files>
       <File FileName="CarListingAppDemoMaui/MauiProgram.cs" />
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="38" Column="15" />
       <File FileName="CarListingAppDemoMaui/App.xaml.cs" />
-      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="70" Column="67" />
+      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="24" Column="73" />
       <File FileName="CarListingAppDemoMaui/Service/CarDbService.cs" />
       <File FileName="CarListingAppDemoMaui/Platforms/Android/AndroidManifest.xml" />
       <File FileName="../../../../../../usr/local/share/dotnet/packs/Microsoft.Android.Sdk.Darwin/33.0.68/tools/Xamarin.Android.Aapt2.targets" />
+      <File FileName="CarListingAppDemoMaui/Model/Car.cs" Line="7" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CarListingAppDemoMaui">
-            <Node name="CarListingAppDemoMaui">
-              <Node name="Service" expanded="True">
-                <Node name="CarApiService.cs" selected="True" />
-              </Node>
+            <Node name="CarListingAppDemoMaui" expanded="True">
+              <Node name="Model" expanded="True" />
+              <Node name="Service" expanded="True" />
               <Node name="ViewModel" expanded="True" />
             </Node>
           </Node>

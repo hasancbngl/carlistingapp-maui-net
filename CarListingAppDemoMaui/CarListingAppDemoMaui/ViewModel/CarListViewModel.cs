@@ -35,23 +35,21 @@ namespace CarListingAppDemoMaui.ViewModel
             this.carApiService = carApiService;
             Title = "Car List Screen";
             AddEditButtonText = createButtonText;
-            // GetCarList();
         }
 
-        [RelayCommand]
-        async Task GetCarList()
+        public async Task GetCarList()
         {
             if (IsLoading) return;
             try
             {
                 IsLoading = true;
-                if (Cars.Any()) Cars.Clear();
+                if (Cars.Count > 0) Cars.Clear();
                 var cars = new List<Car>();
                 if (accessType == NetworkAccess.Internet)
                 {
                     cars = await carApiService.GetCars();
                     System.Console.WriteLine(cars);
-                    if (cars.Any())
+                    if (cars.Count > 0)
                     {
                         App.CarDbService.ClearCars();
                         App.CarDbService.AddCars(cars);
@@ -61,7 +59,11 @@ namespace CarListingAppDemoMaui.ViewModel
                 {
                     cars = App.CarDbService.GetCars();
                 }
-                foreach (var car in cars) Cars.Add(car);
+                foreach (var car in cars)
+                {
+                    Console.WriteLine(car);
+                    Cars.Add(car);
+                }
             }
             catch (Exception ex)
             {
@@ -123,11 +125,10 @@ namespace CarListingAppDemoMaui.ViewModel
                 await ShowAlert("Please try again");
                 return;
             }
+            Cars.RemoveAt(id);
             await carApiService.DeleteCar(id);
             message = carApiService.StatusMessage;
             await ShowAlert(message);
-            await GetCarList();
-
         }
 
         [RelayCommand]

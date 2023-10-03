@@ -1,6 +1,9 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http;
+using System.Net.Http.Json;
+using Android.Media.TV;
 using CarListingAppDemoMaui.Model;
 using Newtonsoft.Json;
+using Org.Apache.Http.Protocol;
 
 namespace CarListingAppDemoMaui.Service
 {
@@ -8,7 +11,7 @@ namespace CarListingAppDemoMaui.Service
     {
         HttpClient _httpClient;
         public string StatusMessage;
-        public static string BaseAddress = "http://192.168.0.215:8080/api/car";
+        public static string BaseAddress = "http://192.168.0.215:8080/api/car/";
 
         public CarApiService()
         {
@@ -20,13 +23,18 @@ namespace CarListingAppDemoMaui.Service
         {
             try
             {
-                var response = await _httpClient.GetStringAsync("");
-                System.Console.WriteLine("get cars response:" + response);
-                return JsonConvert.DeserializeObject<List<Car>>(response);
+                Console.WriteLine("get carrs");
+                var apiResponse = await _httpClient.GetStringAsync("");
+                Console.WriteLine( "apiresponse:" + apiResponse);
+                var carResponse =  JsonConvert.DeserializeObject<CarResponse>(apiResponse);
+                Console.WriteLine("carresponse:" + carResponse.data);
+          
+                return carResponse.data;
             }
             catch (Exception ex)
             {
                 StatusMessage = "Failed to retrieve data.";
+                Console.WriteLine("error getting cars:" + ex.Message);
             }
 
             return null;
@@ -36,8 +44,9 @@ namespace CarListingAppDemoMaui.Service
         {
             try
             {
-                var response = await _httpClient.GetStringAsync("" + id);
-                return JsonConvert.DeserializeObject<Car>(response);
+                var response = await _httpClient.GetStringAsync($"{id}");
+                var carResponse = JsonConvert.DeserializeObject<CarResponse>(response);
+                return carResponse.data[0];
             }
             catch (Exception ex)
             {
@@ -47,42 +56,49 @@ namespace CarListingAppDemoMaui.Service
             return null;
         }
 
-        public async Task AddCar(Car car)
+        public async Task<List<Car>> AddCar(Car car)
         {
             try
             {
                 var response = await _httpClient.PostAsJsonAsync("", car);
+                var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(response);
-                response.EnsureSuccessStatusCode();
                 StatusMessage = "Insert Successful";
+                var carResponse = JsonConvert.DeserializeObject<CarResponse>(content);
+                Console.WriteLine("carresponse:" + carResponse);
+                return carResponse.data;
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine(ex.Message);
                 StatusMessage = "Failed to add data.";
             }
+            return null;
         }
 
-        public async Task DeleteCar(int id)
+        public async Task<List<Car>> DeleteCar(int id)
         {
             try
             {
-
-                var response = await _httpClient.DeleteAsync("/car/" + id);
-                response.EnsureSuccessStatusCode();
+                var response = await _httpClient.DeleteAsync($"{id}");
+                var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("delete: "+response);
+                var carResponse = JsonConvert.DeserializeObject<CarResponse>(content);
+                Console.WriteLine("delete response:" + carResponse);
                 StatusMessage = "Delete Successful";
             }
             catch (Exception ex)
             {
                 StatusMessage = "Failed to delete data.";
             }
+            return null;
         }
 
         public async Task UpdateCar(int id, Car car)
         {
             try
             {
-                var response = await _httpClient.PutAsJsonAsync("/cars/" + id, car);
+                var response = await _httpClient.PutAsJsonAsync($"{id}", car);
                 response.EnsureSuccessStatusCode();
                 StatusMessage = "Update Successful";
             }
