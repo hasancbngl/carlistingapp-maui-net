@@ -1,22 +1,36 @@
 ﻿<Properties StartupConfiguration="{449837C3-9D1B-47DE-B430-72C87AF349C8}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="MyAppleMacCatalystID" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Repository/CarRepository.cs">
-    <Files>
-      <File FileName="CarListingAppDemoMaui/Model/Car.cs" Line="6" Column="19" IsPinned="True" />
-      <File FileName="CarListingAppDemoMaui/Repository/CarRepository.cs" Line="11" Column="16" />
-      <File FileName="CarListingAppDemoMaui/MauiProgram.cs" />
-      <File FileName="CarListingAppDemoMaui/App.xaml" />
-      <File FileName="CarListingAppDemoMaui/App.xaml.cs" />
-      <File FileName="CarListingAppDemoMaui/AppShell.xaml.cs" />
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.2A251FDH300D50" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Service/CarApiService.cs">
+    <Files>
+      <File FileName="CarListingAppDemoMaui/MauiProgram.cs" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" />
+      <File FileName="CarListingAppDemoMaui/App.xaml.cs" />
+      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="70" Column="67" />
+      <File FileName="CarListingAppDemoMaui/Service/CarDbService.cs" />
+      <File FileName="CarListingAppDemoMaui/Platforms/Android/AndroidManifest.xml" />
+      <File FileName="../../../../../../usr/local/share/dotnet/packs/Microsoft.Android.Sdk.Darwin/33.0.68/tools/Xamarin.Android.Aapt2.targets" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CarListingAppDemoMaui">
+            <Node name="CarListingAppDemoMaui">
+              <Node name="Service" expanded="True">
+                <Node name="CarApiService.cs" selected="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="Android.2A251FDH300D50" Xamarin.HotReload.EntryPointException.CarListingAppDemoMaui.HideInfoBar="True" />
 </Properties>

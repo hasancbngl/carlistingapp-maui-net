@@ -2,14 +2,14 @@
 using CarListingAppDemoMaui.Model;
 using SQLite;
 
-namespace CarListingAppDemoMaui.Repository
+namespace CarListingAppDemoMaui.Service
 {
-    public class CarRepository
+    public class CarDbService
     {
         SQLiteConnection connection;
         public string StatusMessage;
 
-        public CarRepository(string dbPath) => Init(dbPath);
+        public CarDbService(string dbPath) => Init(dbPath);
 
         private void Init(string dbPath)
         {
@@ -58,6 +58,20 @@ namespace CarListingAppDemoMaui.Repository
             }
         }
 
+        public void AddCars(List<Car> cars)
+        {
+            try
+            {
+                int result = connection.InsertAll(cars);
+
+                StatusMessage = result == 0 ? "Insert cars Failed" : "Insert cars Successful";
+            }
+            catch (Exception)
+            {
+                StatusMessage = "Failed to Insert cars data.";
+            }
+        }
+
         public void AddCar(Car car)
         {
             try
@@ -82,6 +96,19 @@ namespace CarListingAppDemoMaui.Repository
             catch (Exception)
             {
                 StatusMessage = "Failed to Update data.";
+            }
+        }
+
+        public void ClearCars()
+        {
+            try
+            {
+                var result = connection.DeleteAll<Car>();
+                StatusMessage = result == 0 ? "Delete Failed" : "All cars delete Successful";
+            }
+            catch (Exception)
+            {
+                StatusMessage = "Failed to clear db.";
             }
         }
     }

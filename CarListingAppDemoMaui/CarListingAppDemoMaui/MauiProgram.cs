@@ -1,4 +1,4 @@
-﻿using CarListingAppDemoMaui.Repository;
+﻿using CarListingAppDemoMaui.Service;
 using CarListingAppDemoMaui.View;
 using CarListingAppDemoMaui.ViewModel;
 using Microsoft.Extensions.Logging;
@@ -18,7 +18,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
         string dbPath = Path.Combine(FileSystem.AppDataDirectory, "carsDb.db3");
-        builder.Services.AddSingleton(repo => ActivatorUtilities.CreateInstance<CarRepository>(repo, dbPath));
+        builder.Services.AddSingleton(repo => ActivatorUtilities.CreateInstance<CarDbService>(repo, dbPath));
+        builder.Services.AddTransient<CarApiService>();
         builder.Services.AddSingleton<CarListViewModel>();
         //new instance every time
         builder.Services.AddTransient<CarDetailsViewModel>();

@@ -15,7 +15,7 @@ namespace CarListingAppDemoMaui.ViewModel
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             Id = Convert.ToInt32(HttpUtility.UrlDecode((string)query["Id"]));
-            Car = App.CarRepository.GetCar(Id);
+            Car = App.CarDbService.GetCar(Id);
         }
     }
 }
