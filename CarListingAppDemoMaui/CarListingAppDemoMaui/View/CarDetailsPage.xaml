@@ -12,7 +12,7 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout>
             <Label  Text="Make:"  FontSize="20"/>
-            <Label  Text="{Binding Car.Vin}"  FontSize="20"/>
+            <Label  Text="{Binding Car.Make}"  FontSize="20"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout>
             <Label  Text="Vin:"  FontSize="20"/>

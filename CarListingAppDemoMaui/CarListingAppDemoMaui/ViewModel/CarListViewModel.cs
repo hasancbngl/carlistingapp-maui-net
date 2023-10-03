@@ -80,13 +80,11 @@ namespace CarListingAppDemoMaui.ViewModel
         async Task SaveCar()
         {
             if (string.IsNullOrEmpty(carFromForm.Model) || string.IsNullOrEmpty(carFromForm.Make) || string.IsNullOrEmpty(carFromForm.Vin)) return;
-       //     if (carFromForm.Id == 0) await carApiService.AddCar(carFromForm);
-           // else
+            if (carFromForm.Id == 0) await carApiService.AddCar(carFromForm);
+            else await carApiService.UpdateCar(carFromForm);
 
-                await carApiService.UpdateCar(carFromForm);
-
-       //     await ClearForm();
-         //   await GetCarList();
+            await ClearForm();
+            await GetCarList();
         }
 
         [RelayCommand]

@@ -3,9 +3,7 @@
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/hasancobanoglu/Desktop/demo-apps/dotnet/CarListingAppDemoMaui/CarListingAppDemoMaui/Service/CarApiService.cs" relfile="CarListingAppDemoMaui/Service/CarApiService.cs" line="103" column="1" />
-      <Breakpoint file="/Users/hasancobanoglu/Desktop/demo-apps/dotnet/CarListingAppDemoMaui/CarListingAppDemoMaui/Service/CarApiService.cs" relfile="CarListingAppDemoMaui/Service/CarApiService.cs" line="104" column="1" />
-      <Breakpoint file="/Users/hasancobanoglu/Desktop/demo-apps/dotnet/CarListingAppDemoMaui/CarListingAppDemoMaui/Service/CarApiService.cs" relfile="CarListingAppDemoMaui/Service/CarApiService.cs" line="105" column="1" />
+      <Breakpoint file="/Users/hasancobanoglu/Desktop/demo-apps/dotnet/CarListingAppDemoMaui/CarListingAppDemoMaui/Service/CarApiService.cs" relfile="CarListingAppDemoMaui/Service/CarApiService.cs" line="83" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
@@ -13,22 +11,22 @@
   <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="Android.2A251FDH300D50" Xamarin.HotReload.EntryPointException.CarListingAppDemoMaui.HideInfoBar="True" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Service/CarApiService.cs">
     <Files>
-      <File FileName="CarListingAppDemoMaui/View/MainPage.xaml.cs" Line="4" Column="1" />
+      <File FileName="CarListingAppDemoMaui/View/MainPage.xaml.cs" />
       <File FileName="CarListingAppDemoMaui/View/MainPage.xaml" Line="24" Column="49" />
-      <File FileName="CarListingAppDemoMaui/View/CarDetailsPage.xaml" Line="20" Column="33" />
+      <File FileName="CarListingAppDemoMaui/View/CarDetailsPage.xaml" />
       <File FileName="CarListingAppDemoMaui/ViewModel/CarDetailsViewModel.cs" Line="15" Column="1" />
-      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="102" Column="24" />
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="84" Column="14" />
+      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="83" Column="44" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="89" Column="12" />
+      <File FileName="CarListingAppDemoMaui/Model/Car.cs" Line="7" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CarListingAppDemoMaui" expanded="True">
-            <Node name="CarListingAppDemoMaui">
-              <Node name="Service" expanded="True">
-                <Node name="CarApiService.cs" selected="True" />
-              </Node>
-              <Node name="View">
+          <Node name="CarListingAppDemoMaui">
+            <Node name="CarListingAppDemoMaui" expanded="True">
+              <Node name="Model" expanded="True" />
+              <Node name="Service" expanded="True" />
+              <Node name="View" expanded="True">
                 <Node name="MainPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
