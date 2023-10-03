@@ -1,9 +1,6 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using Android.Media.TV;
+﻿using System.Net.Http.Json;
 using CarListingAppDemoMaui.Model;
 using Newtonsoft.Json;
-using Org.Apache.Http.Protocol;
 
 namespace CarListingAppDemoMaui.Service
 {
@@ -11,7 +8,7 @@ namespace CarListingAppDemoMaui.Service
     {
         HttpClient _httpClient;
         public string StatusMessage;
-        public static string BaseAddress = "http://192.168.0.215:8080/api/car/";
+        public static string BaseAddress = "http://192.168.0.215:8080/api/car";
 
         public CarApiService()
         {
@@ -25,10 +22,10 @@ namespace CarListingAppDemoMaui.Service
             {
                 Console.WriteLine("get carrs");
                 var apiResponse = await _httpClient.GetStringAsync("");
-                Console.WriteLine( "apiresponse:" + apiResponse);
-                var carResponse =  JsonConvert.DeserializeObject<CarResponse>(apiResponse);
+                Console.WriteLine("apiresponse:" + apiResponse);
+                var carResponse = JsonConvert.DeserializeObject<CarResponse>(apiResponse);
                 Console.WriteLine("carresponse:" + carResponse.data);
-          
+
                 return carResponse.data;
             }
             catch (Exception ex)
@@ -46,14 +43,14 @@ namespace CarListingAppDemoMaui.Service
             {
                 var response = await _httpClient.GetStringAsync($"{id}");
                 var carResponse = JsonConvert.DeserializeObject<CarResponse>(response);
+                Console.WriteLine("car response: " + carResponse);
                 return carResponse.data[0];
             }
             catch (Exception ex)
             {
                 StatusMessage = "Failed to retrieve data.";
+                return null;
             }
-
-            return null;
         }
 
         public async Task<List<Car>> AddCar(Car car)
@@ -72,39 +69,42 @@ namespace CarListingAppDemoMaui.Service
             {
                 System.Console.WriteLine(ex.Message);
                 StatusMessage = "Failed to add data.";
+                return null;
             }
-            return null;
         }
 
-        public async Task<List<Car>> DeleteCar(int id)
+        public async Task UpdateCar(Car car)
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"{id}");
-                var content = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("delete: "+response);
-                var carResponse = JsonConvert.DeserializeObject<CarResponse>(content);
-                Console.WriteLine("delete response:" + carResponse);
-                StatusMessage = "Delete Successful";
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = "Failed to delete data.";
-            }
-            return null;
-        }
-
-        public async Task UpdateCar(int id, Car car)
-        {
-            try
-            {
-                var response = await _httpClient.PutAsJsonAsync($"{id}", car);
-                response.EnsureSuccessStatusCode();
-                StatusMessage = "Update Successful";
+                var response = await _httpClient.PutAsJsonAsync("", car);
+            //    response.EnsureSuccessStatusCode();
+                //  var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(response);
+                //  var carResponse = JsonConvert.DeserializeObject<CarResponse>(content);
             }
             catch (Exception ex)
             {
                 StatusMessage = "Failed to update data.";
+            }
+        }
+
+        public async void DeleteCar(int id)
+        {
+            try
+            {
+                Console.WriteLine("deletee:" + id);
+                var response = await _httpClient.DeleteAsync($"{id}");
+                var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("delete: " + response);
+                var carResponse = JsonConvert.DeserializeObject<CarResponse>(content);
+                Console.WriteLine("delete response:" + carResponse);
+                StatusMessage = "Delete Successful";
+
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Failed to delete data.";
             }
         }
     }

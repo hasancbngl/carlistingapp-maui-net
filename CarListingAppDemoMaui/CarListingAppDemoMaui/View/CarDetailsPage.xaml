@@ -5,11 +5,18 @@
              xmlns:viewModel="clr-namespace:CarListingAppDemoMaui.ViewModel"
              x:DataType="viewModel:CarDetailsViewModel"
              Title="{Binding Car.Make}">
-    <StackLayout>
-        <Label 
-            Text="{Binding Car.Vin}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            FontSize="20"/>
-    </StackLayout>
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Label  Text="Model:"  FontSize="20"/>
+            <Label  Text="{Binding Car.Model}"  FontSize="20"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label  Text="Make:"  FontSize="20"/>
+            <Label  Text="{Binding Car.Vin}"  FontSize="20"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label  Text="Vin:"  FontSize="20"/>
+            <Label  Text="{Binding Car.Vin}"  FontSize="20"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>

@@ -10,9 +10,6 @@
     <Grid ColumnSpacing="1" RowSpacing="1" Padding="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,9 +17,9 @@
         </Grid.ColumnDefinitions>
 
         <VerticalStackLayout Padding="5" Grid.Row="0" Margin="9">
-            <Entry x:Name="Make" Placeholder="Enter Make" Text="{Binding Make}" />
-            <Entry x:Name="Model" Placeholder="Enter Model" Text="{Binding Model}"/>
-            <Entry x:Name="Vin" Placeholder="Enter Vin" Text="{Binding Vin}"/>
+            <Entry x:Name="Make" Placeholder="Enter Make" Text="{Binding CarFromForm.Make}" />
+            <Entry x:Name="Model" Placeholder="Enter Model" Text="{Binding CarFromForm.Model}"/>
+            <Entry x:Name="Vin" Placeholder="Enter Vin" Text="{Binding CarFromForm.Vin}"/>
             <Button Text="{Binding AddEditButtonText}" Grid.Row="1" IsEnabled="{Binding IsNotLoading}"
                 Command="{Binding SaveCarCommand}" Margin="9" />
             <Button Text="Clear Form" Command="{Binding ClearFormCommand}" IsEnabled="{Binding IsNotLoading}" 

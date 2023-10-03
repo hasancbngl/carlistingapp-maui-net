@@ -15,20 +15,13 @@ namespace CarListingAppDemoMaui.ViewModel
         const string createButtonText = "Add Car";
         private readonly CarApiService carApiService;
         NetworkAccess accessType = Connectivity.Current.NetworkAccess;
-        string message = string.Empty;
 
         [ObservableProperty]
         bool isRefreshing;
         [ObservableProperty]
-        string make;
-        [ObservableProperty]
-        string model;
-        [ObservableProperty]
-        string vin;
-        [ObservableProperty]
         string addEditButtonText;
         [ObservableProperty]
-        int carId;
+        Car carFromForm = new();
 
         public CarListViewModel(CarApiService carApiService)
         {
@@ -68,7 +61,6 @@ namespace CarListingAppDemoMaui.ViewModel
             catch (Exception ex)
             {
                 Debug.WriteLine($"Unable to get cars: {ex.Message}");
-                await ShowAlert("Failed to retrive list of cars.");
             }
             finally
             {
@@ -87,54 +79,30 @@ namespace CarListingAppDemoMaui.ViewModel
         [RelayCommand]
         async Task SaveCar()
         {
-            if (string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(Vin))
-            {
-                await ShowAlert("Please insert valid data");
-                return;
-            }
+            if (string.IsNullOrEmpty(carFromForm.Model) || string.IsNullOrEmpty(carFromForm.Make) || string.IsNullOrEmpty(carFromForm.Vin)) return;
+       //     if (carFromForm.Id == 0) await carApiService.AddCar(carFromForm);
+           // else
 
-            var car = new Car
-            {
-                Id = CarId,
-                Make = Make,
-                Model = Model,
-                Vin = Vin
-            };
+                await carApiService.UpdateCar(carFromForm);
 
-            if (CarId != 0)
-            {
-                await carApiService.UpdateCar(CarId, car);
-                message = carApiService.StatusMessage;
-            }
-            else
-            {
-                await carApiService.AddCar(car);
-                message = carApiService.StatusMessage;
-            }
-            await ShowAlert(message);
-            await GetCarList();
-            await ClearForm();
-            await GetCarList();
+       //     await ClearForm();
+         //   await GetCarList();
         }
 
         [RelayCommand]
         async Task DeleteCar(int id)
         {
-            if (id == 0)
-            {
-                await ShowAlert("Please try again");
-                return;
-            }
-            Cars.RemoveAt(id);
-            await carApiService.DeleteCar(id);
-            message = carApiService.StatusMessage;
-            await ShowAlert(message);
+            if (id == 0) return;
+            var found = Cars.FirstOrDefault(x => x.Id == id);
+            Cars.Remove(found);
+            carApiService.DeleteCar(id);
         }
 
         [RelayCommand]
         async Task UpdateCar(int id)
         {
             AddEditButtonText = editButtonText;
+            carFromForm.Id = id;
             return;
         }
 
@@ -142,26 +110,23 @@ namespace CarListingAppDemoMaui.ViewModel
         async Task SetEditMode(int id)
         {
             AddEditButtonText = editButtonText;
-            CarId = id;
-            var car = App.CarDbService.GetCar(id);
-            Make = car.Make;
-            Model = car.Model;
-            Vin = car.Vin;
+            var car = Cars.FirstOrDefault(x => x.Id == id);
+            carFromForm.Id = car.Id;
+            carFromForm.Make = car.Make;
+            carFromForm.Model = car.Model;
+            carFromForm.Vin = car.Vin;
+            OnPropertyChanged("CarFromForm");
         }
 
         [RelayCommand]
         async Task ClearForm()
         {
             AddEditButtonText = createButtonText;
-            CarId = 0;
-            Make = string.Empty;
-            Model = string.Empty;
-            Vin = string.Empty;
-        }
-
-        private async Task ShowAlert(string message)
-        {
-            await Shell.Current.DisplayAlert("Info", message, "Ok");
+            carFromForm.Make = "";
+            carFromForm.Model = "";
+            carFromForm.Vin = "";
+            carFromForm.Id = 0;
+            OnPropertyChanged("CarFromForm");
         }
     }
 }
