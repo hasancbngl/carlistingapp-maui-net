@@ -1,40 +1,41 @@
 ﻿<Properties StartupConfiguration="{449837C3-9D1B-47DE-B430-72C87AF349C8}|Default">
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.2A251FDH300D50" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.68" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/hasancobanoglu/Desktop/demo-apps/dotnet/CarListingAppDemoMaui/CarListingAppDemoMaui/Service/CarApiService.cs" relfile="CarListingAppDemoMaui/Service/CarApiService.cs" line="83" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui PreferredExecutionTarget="Android.2A251FDH300D50" Xamarin.HotReload.EntryPointException.CarListingAppDemoMaui.HideInfoBar="True" />
+  <MonoDevelop.Ide.ItemProperties.CarListingAppDemoMaui Xamarin.HotReload.EntryPointException.CarListingAppDemoMaui.HideInfoBar="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B8CF0951-FA4C-43F9-B3D1-DE0435BBCD5C" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CarListingAppDemoMaui/Service/CarApiService.cs">
     <Files>
-      <File FileName="CarListingAppDemoMaui/View/MainPage.xaml.cs" />
-      <File FileName="CarListingAppDemoMaui/View/MainPage.xaml" Line="24" Column="49" />
-      <File FileName="CarListingAppDemoMaui/View/CarDetailsPage.xaml" />
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarDetailsViewModel.cs" Line="15" Column="1" />
-      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="83" Column="44" />
-      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="89" Column="12" />
-      <File FileName="CarListingAppDemoMaui/Model/Car.cs" Line="7" Column="18" />
+      <File FileName="CarListingAppDemoMaui/View/LoginPage.xaml" Line="24" Column="110" />
+      <File FileName="CarListingAppDemoMaui/View/MainPage.xaml" Line="40" Column="32" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarDetailsViewModel.cs" Line="1" Column="1" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/CarListViewModel.cs" Line="16" Column="1" />
+      <File FileName="CarListingAppDemoMaui/Service/CarApiService.cs" Line="115" Column="61" />
+      <File FileName="CarListingAppDemoMaui/ViewModel/LoginViewModel.cs" Line="35" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CarListingAppDemoMaui">
-            <Node name="CarListingAppDemoMaui" expanded="True">
-              <Node name="Model" expanded="True" />
-              <Node name="Service" expanded="True" />
+            <Node name="CarListingAppDemoMaui">
+              <Node name="Service" expanded="True">
+                <Node name="CarApiService.cs" selected="True" />
+              </Node>
               <Node name="View" expanded="True">
+                <Node name="LoadingPage.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="MainPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B8CF0951-FA4C-43F9-B3D1-DE0435BBCD5C" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

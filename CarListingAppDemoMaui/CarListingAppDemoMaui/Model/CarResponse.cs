@@ -1,7 +1,4 @@
-﻿using System;
-using static Microsoft.Maui.Controls.Internals.Profile;
-
-namespace CarListingAppDemoMaui.Model
+﻿namespace CarListingAppDemoMaui.Model
 {
     public class CarResponse
     {

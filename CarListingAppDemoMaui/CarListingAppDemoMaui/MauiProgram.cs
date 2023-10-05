@@ -21,9 +21,13 @@ public static class MauiProgram
         builder.Services.AddSingleton(repo => ActivatorUtilities.CreateInstance<CarDbService>(repo, dbPath));
         builder.Services.AddTransient<CarApiService>();
         builder.Services.AddSingleton<CarListViewModel>();
+        builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddSingleton<LoadingPageViewModel>();
         //new instance every time
         builder.Services.AddTransient<CarDetailsViewModel>();
         builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<LoadingPage>();
+        builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddTransient<CarDetailsPage>();
         return builder.Build();
     }

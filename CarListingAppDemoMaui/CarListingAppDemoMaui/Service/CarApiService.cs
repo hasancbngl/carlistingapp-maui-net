@@ -8,7 +8,7 @@ namespace CarListingAppDemoMaui.Service
     {
         HttpClient _httpClient;
         public string StatusMessage;
-        public static string BaseAddress = "http://192.168.0.215:8080/api/car";
+        public static string BaseAddress = "http://192.168.0.215:8080/api/car/";
 
         public CarApiService()
         {
@@ -105,6 +105,24 @@ namespace CarListingAppDemoMaui.Service
             catch (Exception ex)
             {
                 StatusMessage = "Failed to delete data.";
+            }
+        }
+
+        public async Task<AuthResponse> Login(LoginModel loginModel)
+        {
+            try
+            {
+                var response = await _httpClient.PostAsJsonAsync("/login", loginModel);
+                var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("authresponse: " + response);
+                var authResponse = JsonConvert.DeserializeObject<AuthResponse>(content);
+                Console.WriteLine("authresponse:" + authResponse);
+                return authResponse;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Failed to get auth response data.";
+                return null;
             }
         }
     }
