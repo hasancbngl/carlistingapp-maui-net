@@ -1,4 +1,5 @@
-﻿namespace CarListingAppDemoMaui.Model
+﻿using System;
+namespace CarListingAppDemoMaui.Model
 {
     public class CarResponse
     {

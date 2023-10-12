@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Security.Claims;
 using CarListingAppDemoMaui.View;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CarListingAppDemoMaui.ViewModel
 {
-    public partial class LoadingPageViewModel : BaseViewModel
+    public class LoadingViewModel : BaseViewModel
     {
-        public LoadingPageViewModel()
+        public LoadingViewModel()
         {
             CheckUserLoginDetails();
         }
@@ -27,13 +27,13 @@ namespace CarListingAppDemoMaui.ViewModel
                 }
                 else
                 {
-                    var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Role))?.Value;
-                    App.UserInfo = new UserInfo()
-                    {
-                        Username = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Email))?.Value,
-                        Role = role
-                    };
-                    MenuBuilder.BuildMenu();
+                    //var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Role))?.Value;
+                    //App.User = new User()
+                    //{
+                    //    Username = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Email))?.Value,
+                    //    Role = role
+                    //};
+                    //  MenuBuilder.BuildMenu();
                     await GoToMainPage();
                 }
             }

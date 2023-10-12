@@ -5,24 +5,22 @@
              xmlns:viewModel="clr-namespace:CarListingAppDemoMaui.ViewModel"
              Shell.NavBarIsVisible="False"
              Title="Login">
-    <VerticalStackLayout
-        Spacing="25" 
-        Padding="30,0" 
-        VerticalOptions="Center">
-        <Image Source="https://cdn.pixabay.com/photo/2012/04/13/20/37/car-33556_960_720.png"></Image>
-        <VerticalStackLayout Spacing="5">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Image Source="https://cdn.pixabay.com/photo/2012/04/13/20/37/car-33556_960_720.png" Margin="50"/>
+        <VerticalStackLayout Spacing="16" Padding="24">
             <Label Text="Welcome!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
-            <Label Text="Login to your account" FontSize="18" TextColor="Gray" 
+            <Label Text="Login to your account" FontSize="20" TextColor="Gray" 
                    HorizontalTextAlignment="Center" />
-        </VerticalStackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Entry x:Name="Username" Placeholder="Enter Username" Text="{Binding Username}" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Entry x:Name="Password" Placeholder="Enter Password" IsPassword="True" Text="{Binding Password}" />
-        </StackLayout>
-         <Label Text="{Binding ErrorMsg}" TextColor="Red" FontSize="18" IsVisible="{Binding IsErrorMsgVisible}"/>
-        <Button Text="Sign In" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" 
+
+            <Entry x:Name="Username" Placeholder="Enter Username" Text="{Binding Username}" FontSize="18"
+                   HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Password" Placeholder="Enter Password" IsPassword="True" Text="{Binding Password}"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding ErrorMsg}" TextColor="Red" FontSize="18" IsVisible="{Binding IsErrorMsgVisible}"/>
+                <Button Text="Sign In" CornerRadius="20" HorizontalOptions="Fill" 
                 Command="{Binding LoginCommand}" />
+                <Button Text="Register" CornerRadius="20" HorizontalOptions="FillAndExpand" 
+                Command="{Binding RegisterCommand}" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

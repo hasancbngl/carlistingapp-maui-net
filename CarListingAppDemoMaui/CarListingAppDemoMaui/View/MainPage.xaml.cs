@@ -1,6 +1,6 @@
 ﻿using CarListingAppDemoMaui.ViewModel;
 
-namespace CarListingAppDemoMaui;
+namespace CarListingAppDemoMaui.View;
 
 public partial class MainPage : ContentPage
 {

@@ -20,6 +20,7 @@ namespace CarListingAppDemoMaui.Service
         {
             try
             {
+              //  await SetAuthToken();
                 Console.WriteLine("get carrs");
                 var apiResponse = await _httpClient.GetStringAsync("");
                 Console.WriteLine("apiresponse:" + apiResponse);
@@ -108,22 +109,46 @@ namespace CarListingAppDemoMaui.Service
             }
         }
 
-        public async Task<AuthResponse> Login(LoginModel loginModel)
+        public async Task<User> Login(LoginData userData)
         {
             try
             {
-                var response = await _httpClient.PostAsJsonAsync("/login", loginModel);
+                var response = await _httpClient.PostAsJsonAsync("login", userData);
                 var content = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("authresponse: " + response);
-                var authResponse = JsonConvert.DeserializeObject<AuthResponse>(content);
-                Console.WriteLine("authresponse:" + authResponse);
-                return authResponse;
+                Console.WriteLine("loginResponse: " + response);
+                var loginResponse = JsonConvert.DeserializeObject<LoginResponseDto>(content);
+                Console.WriteLine("loginResponse:" + loginResponse.data);
+                return loginResponse.data;
             }
             catch (Exception ex)
             {
                 StatusMessage = "Failed to get auth response data.";
                 return null;
             }
+        }
+
+        public async Task<RegisterResponse> Register(RegisterDto userData)
+        {
+            try
+            {
+                var response = await _httpClient.PostAsJsonAsync("register", userData);
+                var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("registerresponse: " + response);
+                var registerResponse = JsonConvert.DeserializeObject<RegisterResponse>(content);
+                Console.WriteLine("registerresponse:" + response);
+                return registerResponse;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Failed to get auth response data.";
+                return null;
+            }
+        }
+
+        public async Task SetAuthToken()
+        {
+            var token = await SecureStorage.GetAsync("Token");
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         }
     }
 }

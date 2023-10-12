@@ -22,13 +22,15 @@ public static class MauiProgram
         builder.Services.AddTransient<CarApiService>();
         builder.Services.AddSingleton<CarListViewModel>();
         builder.Services.AddSingleton<LoginViewModel>();
-        builder.Services.AddSingleton<LoadingPageViewModel>();
         //new instance every time
         builder.Services.AddTransient<CarDetailsViewModel>();
+        builder.Services.AddTransient<RegisterViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<LoginPage>();
         builder.Services.AddSingleton<MainPage>();
-        builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddSingleton<LoginPage>();
-        builder.Services.AddTransient<CarDetailsPage>();
+        builder.Services.AddSingleton<CarDetailsPage>();
+        builder.Services.AddSingleton<RegisterPage>();
         return builder.Build();
     }
 }

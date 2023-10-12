@@ -1,10 +1,9 @@
-﻿using System;
-using AndroidX.AppCompat.View.Menu;
-using System.Security.Claims;
-using CarListingAppDemoMaui.Model;
+﻿using CarListingAppDemoMaui.Model;
 using CarListingAppDemoMaui.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CarListingAppDemoMaui.View;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CarListingAppDemoMaui.ViewModel
 {
@@ -30,41 +29,43 @@ namespace CarListingAppDemoMaui.ViewModel
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                errorMsg = "Invalid Login Attempt";
-                isErrorMsgVisible = true;
+                DisplayErrorMsg();
             }
             else
             {
-                var loginModel = new LoginModel(Username, Password);
-                var response = await carApiService.Login(loginModel);
-                    if (!string.IsNullOrEmpty(response.Token))
-                    {
-                        // Store token in secure storage 
-                        await SecureStorage.SetAsync("Token", response.Token);
+                var user = new LoginData
+                {
+                    Username = Username,
+                    Password = Password
+                };
+                var response = await carApiService.Login(user);
+                if (!string.IsNullOrEmpty(response.Token))
+                {
+                    // Store token in secure storage 
+                    await SecureStorage.SetAsync("Token", response.Token);
+                    var jsonToken = new JwtSecurityTokenHandler().ReadToken(response.Token) as JwtSecurityToken;
 
-                        // build a menu on the fly...based on the user role
-                        var jsonToken = new JwtSecurityTokenHandler().ReadToken(response.Token) as JwtSecurityToken;
-
-                        var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Role))?.Value;
-
-                        App.UserInfo = new UserInfo()
-                        {
-                            Username = Username,
-                            Role = role
-                        };
-                    isErrorMsgVisible = false;
-
-                        // navigate to app's main page
-                        MenuBuilder.BuildMenu();
-                        await Shell.Current.GoToAsync($"{nameof(MainPage)}");
-
-                    }
-                    else
-                    {
-                        errorMsg = "Invalid Login Attempt";
-                    isErrorMsgVisible = true;
-                    }
+                  //  var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Role))?.Value;
+                    // navigate to app's main page
+                  //  MenuBuilder.BuildMenu();
+                    //  App.User = 
+                    await Shell.Current.GoToAsync($"{nameof(MainPage)}");
+                }
+               else  DisplayErrorMsg();
             }
+        }
+
+        [RelayCommand]
+        async Task Register()
+        {
+            await Shell.Current.GoToAsync($"{nameof(RegisterPage)}");
+        }
+
+        void DisplayErrorMsg()
+        {
+            errorMsg = "Invalid Login Attempt, check your email or password";
+            isErrorMsgVisible = true;
+            password = "";
         }
     }
 }
