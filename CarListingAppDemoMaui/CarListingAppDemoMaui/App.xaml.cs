@@ -14,7 +14,6 @@ public partial class App : Application
         InitializeComponent();
         MainPage = new AppShell();
         CarDbService = carDbService;
-        CheckUserLoginDetails();
     }
 }
 
