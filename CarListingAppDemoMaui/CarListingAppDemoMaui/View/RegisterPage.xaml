@@ -4,9 +4,25 @@
              x:Class="CarListingAppDemoMaui.View.RegisterPage"
              Title="RegisterPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Image Source="https://cdn.pixabay.com/photo/2012/04/13/20/37/car-33556_960_720.png" Margin="24"
+               WidthRequest="150" HeightRequest="150"/>
+        <VerticalStackLayout Spacing="16" Padding="24,0,24,0">
+            <Label Text="Register!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Entry x:Name="Name" Placeholder="Enter Name" Text="{Binding Username}" FontSize="18"
+                   HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Surname" Placeholder="Enter Surname" IsPassword="True" Text="{Binding Password}"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Username" Placeholder="Enter Username" IsPassword="True" Text="{Binding Password}"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Email" Placeholder="Enter Email" Text="{Binding Username}" FontSize="18"
+                   HorizontalTextAlignment="Center"/>
+            <Entry x:Name="PhoneNumber" Placeholder="Enter Phone Number" Text="{Binding Username}" FontSize="18"
+                   HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Password" Placeholder="Enter Password" IsPassword="True" Text="{Binding Password}"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding ErrorMsg}" TextColor="Red" FontSize="18" IsVisible="{Binding IsErrorMsgVisible}"/>
+            <Button Text="Register" CornerRadius="20" HorizontalOptions="Fill" 
+                Command="{Binding RegisterCommand}" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
