@@ -79,9 +79,10 @@ namespace CarListingAppDemoMaui.ViewModel
         [RelayCommand]
         async Task SaveCar()
         {
-            if (string.IsNullOrEmpty(carFromForm.Model) || string.IsNullOrEmpty(carFromForm.Make) || string.IsNullOrEmpty(carFromForm.Vin)) return;
-            if (carFromForm.Id == 0) await carApiService.AddCar(carFromForm);
-            else await carApiService.UpdateCar(carFromForm);
+            if (string.IsNullOrEmpty(CarFromForm.Model) || string.IsNullOrEmpty(CarFromForm.Make) ||
+                string.IsNullOrEmpty(CarFromForm.Vin)) return;
+            if (CarFromForm.Id == 0) await carApiService.AddCar(CarFromForm);
+            else await carApiService.UpdateCar(CarFromForm);
 
             await ClearForm();
             await GetCarList();
@@ -100,7 +101,7 @@ namespace CarListingAppDemoMaui.ViewModel
         async Task UpdateCar(int id)
         {
             AddEditButtonText = editButtonText;
-            carFromForm.Id = id;
+            CarFromForm.Id = id;
             return;
         }
 
@@ -109,10 +110,10 @@ namespace CarListingAppDemoMaui.ViewModel
         {
             AddEditButtonText = editButtonText;
             var car = Cars.FirstOrDefault(x => x.Id == id);
-            carFromForm.Id = car.Id;
-            carFromForm.Make = car.Make;
-            carFromForm.Model = car.Model;
-            carFromForm.Vin = car.Vin;
+            CarFromForm.Id = car.Id;
+            CarFromForm.Make = car.Make;
+            CarFromForm.Model = car.Model;
+            CarFromForm.Vin = car.Vin;
             OnPropertyChanged("CarFromForm");
         }
 
@@ -120,10 +121,10 @@ namespace CarListingAppDemoMaui.ViewModel
         async Task ClearForm()
         {
             AddEditButtonText = createButtonText;
-            carFromForm.Make = "";
-            carFromForm.Model = "";
-            carFromForm.Vin = "";
-            carFromForm.Id = 0;
+            CarFromForm.Make = "";
+            CarFromForm.Model = "";
+            CarFromForm.Vin = "";
+            CarFromForm.Id = 0;
             OnPropertyChanged("CarFromForm");
         }
     }

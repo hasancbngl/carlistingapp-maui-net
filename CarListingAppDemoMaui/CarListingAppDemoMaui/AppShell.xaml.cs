@@ -12,5 +12,16 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
     }
+
+    protected override void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        base.OnNavigating(args);
+
+        // Cancel any back navigation.
+        if (args.Source == ShellNavigationSource.Pop)
+        {
+            args.Cancel();
+        }
+    }
 }
 

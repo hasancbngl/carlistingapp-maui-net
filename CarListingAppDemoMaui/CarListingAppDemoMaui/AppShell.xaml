@@ -4,10 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CarListingAppDemoMaui.View"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Loading"
+        Title="Loading Page"
         ContentTemplate="{DataTemplate local:LoadingPage}"
         Route="LoadingPage" />
 </Shell>

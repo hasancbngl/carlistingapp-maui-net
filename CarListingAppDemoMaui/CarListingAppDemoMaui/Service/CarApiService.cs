@@ -86,6 +86,7 @@ namespace CarListingAppDemoMaui.Service
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Exception occured");
                 StatusMessage = "Failed to update data.";
             }
         }
@@ -140,6 +141,7 @@ namespace CarListingAppDemoMaui.Service
             }
             catch (Exception ex)
             {
+                Console.WriteLine("exception: " + ex);
                 StatusMessage = "Failed to get auth response data.";
                 return null;
             }

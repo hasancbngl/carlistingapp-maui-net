@@ -9,7 +9,7 @@ namespace CarListingAppDemoMaui.Model
         [JsonProperty("data", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public User? data { get; set; } = null;
         public bool success { get; set; }
-        public string message { get; set; }
+        public string? message { get; set; }
     }
 }
 

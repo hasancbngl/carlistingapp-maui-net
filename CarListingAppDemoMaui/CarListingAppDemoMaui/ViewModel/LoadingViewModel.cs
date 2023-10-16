@@ -25,17 +25,7 @@ namespace CarListingAppDemoMaui.ViewModel
                     SecureStorage.Remove("Token");
                     await GoToLoginPage();
                 }
-                else
-                {
-                    //var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Role))?.Value;
-                    //App.User = new User()
-                    //{
-                    //    Username = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(ClaimTypes.Email))?.Value,
-                    //    Role = role
-                    //};
-                    //  MenuBuilder.BuildMenu();
-                    await GoToMainPage();
-                }
+                else await GoToMainPage();
             }
         }
 

@@ -5,9 +5,10 @@
              xmlns:model="clr-namespace:CarListingAppDemoMaui.Model"
              xmlns:viewModel="clr-namespace:CarListingAppDemoMaui.ViewModel"
              x:DataType="viewModel:CarListViewModel"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+              Shell.NavBarIsVisible="False">
 
-    <Grid ColumnSpacing="1" RowSpacing="1" Padding="5">
+    <Grid ColumnSpacing="1" RowSpacing="1" Padding="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
