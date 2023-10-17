@@ -9,4 +9,10 @@ public partial class RegisterPage : ContentPage
         InitializeComponent();
         this.BindingContext = viewmodel;
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        Application.Current.Quit();
+        return true;
+    }
 }

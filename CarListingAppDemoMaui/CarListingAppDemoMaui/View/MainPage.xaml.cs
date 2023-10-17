@@ -10,6 +10,12 @@ public partial class MainPage : ContentPage
         BindingContext = viewModel;
         viewModel.GetCarList();
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        Application.Current.Quit();
+        return true;
+    }
 }
 
 

@@ -9,4 +9,10 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
         this.BindingContext = viewModel;
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        Application.Current.Quit();
+        return true;
+    }
 }

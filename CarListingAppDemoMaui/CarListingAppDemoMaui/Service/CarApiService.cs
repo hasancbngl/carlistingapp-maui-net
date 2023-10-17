@@ -8,7 +8,7 @@ namespace CarListingAppDemoMaui.Service
     {
         HttpClient _httpClient;
         public string StatusMessage;
-        public static string BaseAddress = "http://172.16.12.81:8080/api/car/";
+        public static string BaseAddress = "http://192.168.0.100:8080/api/car/";
 
         public CarApiService()
         {

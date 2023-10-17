@@ -36,7 +36,6 @@ namespace CarListingAppDemoMaui.ViewModel
             try
             {
                 IsLoading = true;
-                if (Cars.Count > 0) Cars.Clear();
                 var cars = new List<Car>();
                 if (accessType == NetworkAccess.Internet)
                 {
@@ -55,7 +54,14 @@ namespace CarListingAppDemoMaui.ViewModel
                 foreach (var car in cars)
                 {
                     Console.WriteLine(car);
-                    Cars.Add(car);
+                    var existingCar = Cars.FirstOrDefault(c => c.Id==car.Id);
+
+                    if (existingCar == null) Cars.Add(car);
+                    else
+                    {
+                        var index = Cars.IndexOf(existingCar);
+                        Cars[index] = car;
+                    }
                 }
             }
             catch (Exception ex)

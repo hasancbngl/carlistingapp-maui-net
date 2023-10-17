@@ -76,4 +76,9 @@
 	  <Folder Include="View\" />
 	  <Folder Include="Service\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Update="Platforms\iOS\info.plist">
+	    <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+	  </None>
+	</ItemGroup>
 </Project>

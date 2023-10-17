@@ -6,7 +6,10 @@
              xmlns:viewModel="clr-namespace:CarListingAppDemoMaui.ViewModel"
              x:DataType="viewModel:CarListViewModel"
              Title="{Binding Title}"
-              Shell.NavBarIsVisible="False">
+             NavigationPage.HasBackButton="False">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
 
     <Grid ColumnSpacing="1" RowSpacing="1" Padding="16">
         <Grid.RowDefinitions>

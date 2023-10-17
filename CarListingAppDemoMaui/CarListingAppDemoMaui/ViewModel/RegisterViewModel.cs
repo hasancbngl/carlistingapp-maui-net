@@ -54,7 +54,7 @@ namespace CarListingAppDemoMaui.ViewModel
                 var response = await carApiService.Register(registerDto);
                 if (response.data)
                 {
-                    await Shell.Current.GoToAsync($"{nameof(MainPage)}");
+                    await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
                 }
                 else DisplayErrorMsg("An error occured.Pleae check your network connection");
             }

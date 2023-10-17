@@ -36,8 +36,8 @@ namespace CarListingAppDemoMaui.ViewModel
             {
                 var user = new LoginData
                 {
-                    Username = Username,
-                    Password = Password
+                    Username = Username.ToLower(),
+                    Password = Password.ToLower()
                 };
                 var response = await carApiService.Login(user);
                 if (response.success)
@@ -53,6 +53,10 @@ namespace CarListingAppDemoMaui.ViewModel
         [RelayCommand]
         async Task Register()
         {
+            Username = "";
+            IsErrorMsgVisible = false;
+            ErrorMsg = "";
+            Password = "";
             await Shell.Current.GoToAsync($"{nameof(RegisterPage)}");
         }
 
