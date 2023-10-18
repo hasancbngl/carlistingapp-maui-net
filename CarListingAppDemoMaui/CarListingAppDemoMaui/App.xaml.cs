@@ -7,7 +7,6 @@ namespace CarListingAppDemoMaui;
 
 public partial class App : Application
 {
-    public static LoginData User { get; private set; }
     public static CarDbService CarDbService { get; private set; }
     public App(CarDbService carDbService)
     {

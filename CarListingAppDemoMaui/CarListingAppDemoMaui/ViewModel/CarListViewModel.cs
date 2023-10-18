@@ -95,6 +95,13 @@ namespace CarListingAppDemoMaui.ViewModel
         }
 
         [RelayCommand]
+        async Task LogOut()
+        {
+            SecureStorage.Remove("Token");
+            await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
+        }
+
+        [RelayCommand]
         async Task DeleteCar(int id)
         {
             if (id == 0) return;
